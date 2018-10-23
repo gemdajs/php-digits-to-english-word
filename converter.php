@@ -64,7 +64,7 @@ class Converter {
             "hundred", "thousand", "million", "billion", "trillion", "quadrillion",
 			'Quintillion', 'Sextillion', 'Septillion', 'Octillion',
             'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion', 'Tredecillion',
-            'Quattuordecillion', 'Quindecillion', 'Sexdecillion', 'Sexdecillion',
+            'Quattuordecillion', 'Quindecillion', 'Sexdecillion',
             'Septendecillion', 'Octodecillion', 'Novemdecillion', 'Vigintillion',
         );
         $formattedNumber = self::formatAsNumber($text);
