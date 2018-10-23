@@ -1,8 +1,8 @@
 <?php
 
 class Converter {
-
-    public function formatAsNumber($text) {
+	public static function formatAsNumber($text) {
+		$text = str_replace(' ', '', $text);
         $parts = explode('.', $text);
         if (!count($parts)) {
             return "0.00";
@@ -66,16 +66,14 @@ class Converter {
             'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion', 'Tredecillion',
             'Quattuordecillion', 'Quindecillion', 'Sexdecillion', 'Sexdecillion',
             'Septendecillion', 'Octodecillion', 'Novemdecillion', 'Vigintillion',
-            'Centillion'
         );
         $formattedNumber = self::formatAsNumber($text);
 
         if((int)$formattedNumber == 0) {
             return "zero";
         }
-        $formattedNumberArray = explode(".", $formattedNumber);//separate the whole number from decimal
+        $formattedNumberArray = explode(".", $formattedNumber);//separate the whole part from decimal
         $wholePart = $formattedNumberArray[0];
-        $decimalPart = $formattedNumberArray[1];
         $wholeArray = array_reverse(explode(",", $wholePart));
         krsort($wholeArray);
         $numberInWordArray = [];
@@ -118,11 +116,13 @@ class Converter {
 
 
             if(trim($numberInWord)) {
-                if ($index > 0) {
-                    $numberInWord .= " " . $hundreds[$index];
-                }
+				if(count($hundreds) > $index) {
+					if ($index > 0) {
+						$numberInWord .= " " . $hundreds[$index];
+					}
 
-                $numberInWordArray[] = $numberInWord;
+					$numberInWordArray[] = $numberInWord;
+				}
             }
         }
         return strtolower(implode(', ', $numberInWordArray));
