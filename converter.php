@@ -62,7 +62,7 @@ class Converter {
         );
         $hundreds = array(
             "hundred", "thousand", "million", "billion", "trillion", "quadrillion",
-            "quadrillion", 'Quintillion', 'Sextillion', 'Septillion', 'Octillion',
+			'Quintillion', 'Sextillion', 'Septillion', 'Octillion',
             'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion', 'Tredecillion',
             'Quattuordecillion', 'Quindecillion', 'Sexdecillion', 'Sexdecillion',
             'Septendecillion', 'Octodecillion', 'Novemdecillion', 'Vigintillion',
